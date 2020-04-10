@@ -1,0 +1,28 @@
+{
+    //Basic Setup Configurations
+    "terminal.integrated.shellArgs.windows": [
+        "-ExecutionPolicy",
+        "Bypass"
+    ],
+    "files.associations": {
+        "*.toml": "ini",
+        "*.cfg": "json",
+        "*.conf": "json"
+    },
+    //Editor Configurations
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 18,
+    "editor.formatOnSave": true,
+    "yaml.format.enable": true,
+    //Python configurations
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "88"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--max-line-length=88"
+    ]
+}

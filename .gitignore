@@ -1,2 +1,9 @@
 #VsCode
-.vscode
+#.vscode
+
+
+#ES storage
+dockerRepo/elasticsearch/storage/
+
+#Docks
+docs/*.xlsx

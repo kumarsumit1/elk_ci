@@ -1,0 +1,41 @@
+version: "3.2"
+
+services:
+    elasticsearch:
+        image: elasticsearch:7.6.1
+        environment: 
+            - discovery.type=single-node
+        ports: 
+            - 9300:9300
+            - 9200:9200
+        networks:
+            - logging-network 
+    
+    logstash:
+        image: logstash:7.6.1
+        depends_on: 
+            - elasticsearch
+        volumes:
+            - type: bind
+              source: .
+              target: /data 
+        #command: -f /data/tellurium_logstash.conf
+        entrypoint: ["tail","-f","/dev/null"]
+        expose:
+            - "80"
+        networks:
+        - logging-network
+
+    kibana:
+        image: kibana:7.6.1
+        depends_on:
+            - logstash
+        ports: 
+            - 5601:5601
+        networks: 
+            - logging-network
+
+
+networks: 
+  logging-network:
+    driver: bridge
