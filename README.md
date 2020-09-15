@@ -1,5 +1,12 @@
 # elk_ci
 
+ELK stack has OSS,basic ,Gold,platinum and Enterprise liscensing system.
+
+https://www.elastic.co/subscriptions
+
+Choose liscensing carefully:
+https://stackoverflow.com/questions/54079501/running-elastic-without-the-trial-license
+
 Filebeat is called "forwarder" , which forwards files from remote nodes
 Elastic seracher is called "indexer"
 
@@ -11,6 +18,16 @@ https://medium.com/analytics-vidhya/elk-stack-in-docker-6285ec1ac1aa
 
 ELBK setup :
 https://www.youtube.com/playlist?list=PLsgnv1SN76IJs44b2HNJYM_i64NzijlZx
+
+Common configurations to look into while setting up ELK :
+https://cloudaffaire.com/how-to-install-and-configure-elasticsearch-cluster-in-linux/
+
+Very nice list of articles for Elk
+https://medium.com/elasticsearch/contents-cebdc419c8c9
+
+Understanding Query
+https://medium.com/@User3141592/understanding-the-elasticsearch-query-dsl-ce1d67f1aa5b
+
 
 Logstash:
 
@@ -131,29 +148,58 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/cat.html
 
 ?pretty=true --> formatted output 
 
-Kibana :
+
+Getting Down and Dirty with ElasticSearch by Clinton Gormley
+https://www.youtube.com/watch?v=7FLXjgB0PQI
+
+
+# Kibana :
   It runs on Node Js
   
   
+Dashboard banner :
+1. Create .png files and keep them at <kibana_installation_home_path>/src/legacy/ui/public/assets/favicons
+2. Go to Markdown Visualization and use follwing code 
+     ![Image](http://kibana_IP:5601/ui/favicons/setup.png)
+
   
+  
+  
+# Kibna Visualization using Vega:
+
+Intro : https://www.youtube.com/watch?v=lQGCipY3th8
+Tutorial : 
+       
+      1. https://www.youtube.com/playlist?list=PLqhRANpamh63oDk0FHWTFbjQJfdFbg8vx
+	  2. https://www.youtube.com/watch?v=4xAO01xCBpQ
+	  3. https://www.youtube.com/watch?v=RDe7KOb_SLQ
+
+https://vega.github.io/polestar/
+
+https://vega.github.io/editor  
+
+
+https://github.com/nyurik/kibana-vega-vis
   
 Docker :
-
+```
 docker pull logstash:7.6.1
 docker run -it --rm logstash:7.6.1 --version
 docker run -it --rm logstash:7.6.1 -e 'input { stdin { } } output { stdout { } }'
 docker run -it --rm logstash:7.6.1 -e 'input { stdin { } } output { stdout { codec => rubydebug } }'
 
 docker run -it --rm --name logstash --entrypoint bash -e "xpack.security.enabled=false" logstash:7.6.1
+```
 
 
-
-
+```
 docker pull elasticsearch:7.6.1
 
+```
 
+```
 docker pull kibana:7.6.1
-
+```
 Part 1 : https://vocon-it.com/2016/11/17/logstash-hello-world/
 Part 2 : https://vocon-it.com/2016/11/18/elasticsearch-hello-world-example/
 Part 3 : https://vocon-it.com/2016/11/20/kibana-hello-world-example/

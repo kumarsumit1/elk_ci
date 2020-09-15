@@ -68,4 +68,10 @@ output {
 stdout { codec => dots }
 
 
-elasticsearch {hosts => [ “http://your.elastic.domain.here" ]index => “borrow-history-write”document_type => “_doc”document_id => “%{fingerprint}”}
+elasticsearch {
+	hosts => [ “http://your.elastic.domain.here" ]
+	index => “borrow-history-write”
+	document_type => “_doc”
+	 document_id => "%{fingerprint}"
+	}
+	
