@@ -1,8 +1,13 @@
 # elk_ci
 
+Demo environment of Kibana is available at 
+https://demo.elastic.co/app/kibana
+
+
 ELK stack has OSS,basic ,Gold,platinum and Enterprise liscensing system.
 
 https://www.elastic.co/subscriptions
+
 
 Choose liscensing carefully:
 https://stackoverflow.com/questions/54079501/running-elastic-without-the-trial-license
@@ -26,7 +31,7 @@ Very nice list of articles for Elk
 https://medium.com/elasticsearch/contents-cebdc419c8c9
 
 Understanding Query
-https://medium.com/@User3141592/understanding-the-elasticsearch-query-dsl-ce1d67f1aa5b
+https://medium.com/@User3141592/understanding-the-elasticsearch-query-dsl-ce1d67f1aa5b 
 
 
 Logstash:
